@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    dynamic:
+      primary: emp
+      datasource:
+        emp:
+          url: jdbc:mysql://localhost:3306/emp?useUnicode=true&serverTimezone=Asia/Shanghai&autoReconnect=true&failOverReadOnly=false
+          username: root
+          password: CXScxs137387
+          driver-class-name: com.mysql.cj.jdbc.Driver
+#        analysis:
+#          url: jdbc:mysql://115.159.76.88:52541/analysis?useUnicode=true&serverTimezone=Asia/Shanghai&autoReconnect=true&failOverReadOnly=false
+#          username: analyze
+#          password: analyze*&g0$X!$S
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+#        tbdp:
+#          url: jdbc:mysql://192.168.13.44:3306/tbdp?useUnicode=true&serverTimezone=Asia/Shanghai&autoReconnect=true&failOverReadOnly=false
+#          username: tbdp
+#          password: tbdp123&*()
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper: debug
+  file:
+    name: emp.log
