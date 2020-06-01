@@ -1,0 +1,53 @@
+server:
+  undertow:
+    io-threads: 4
+    worker-threads: 20
+    buffer-size: 1024
+    direct-buffers: true
+  port: 8084
+
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*Mapper.xml
+  typeAliasesPackage: com.sml.xcx.entity
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      column-underline: true
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+spring:
+  profiles:
+    active: dev
+  mvc:
+    pathmatch:
+      use-suffix-pattern: false
+      use-registered-suffix-pattern: true
+    contentnegotiation:
+      favor-path-extension: false
+  datasource:
+    hikari:
+      max-lifetime: 60000
+      idle-timeout: 60000
+      connection-timeout: 60000
+      validation-timeout: 3000
+      connection-test-query: select 1
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+      enabled: true
+
+logging:
+  level:
+    root: info
+  file:
+    path: /data/logs/sdcrm
