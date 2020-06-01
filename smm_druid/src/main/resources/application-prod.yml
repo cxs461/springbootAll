@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    dynamic:
+      primary: sdinfo
+      datasource:
+        emp:
+          url: jdbc:mysql://127.0.0.1:3306/emp?serverTimezone=GMT%2B8
+          username: root
+          password: CXScxs137387
+          driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper: debug
+  file:
+    name: emp.log
